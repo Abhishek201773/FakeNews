@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection - Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Fake News Detection</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="/analysis">Analysis</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="content">
+            <h2>Enter the News Article</h2>
+            <form action="/predict" method="post">
+                <textarea name="content" id="news-input" placeholder="Paste your news article here..."></textarea>
+                <button type="submit" id="predict-btn">Check if it's Fake</button>
+            </form>
+            <div id="loading-spinner" class="hidden">Loading...</div>
+            <div id="result">
+                {% if prediction_text %}
+                <h3>{{ prediction_text }}</h3>
+                <img src="{{ url_for('static', filename=image_path) }}" alt="Prediction Image">
+                {% endif %}
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Fake News Detection. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Fake News Detection</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/analysis">Analysis</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="home">
+            <div class="content">
+                <h3>Fake News Detection</h3>
+                <p>
+                The Fake News Detection model aims to classify news articles as either real or fake. This is done by training a machine learning model on a dataset of labeled news articles, where each article is tagged as real or fake. The model uses natural language processing (NLP) techniques to preprocess the text data and a machine learning algorithm to learn the patterns that distinguish real news from fake news.
+                </p>
+                <div class="bn">
+                    <a href="/analysis" class="btn">Analysis Now</a>
+                </div>                
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Fake News Detection. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
